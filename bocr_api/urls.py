@@ -20,4 +20,5 @@ from bocr_api.settings import VERSION
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(f'api/{VERSION}/', include('api.urls')),
+    path(f'api/{VERSION}/', include('users.urls')),
 ]

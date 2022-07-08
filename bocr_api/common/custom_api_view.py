@@ -1,4 +1,5 @@
 from rest_framework.renderers import JSONRenderer
+from rest_framework.views import APIView
 
 
 class ResponseRenderer(JSONRenderer):
@@ -20,3 +21,7 @@ class ResponseRenderer(JSONRenderer):
         return super(ResponseRenderer,
                      self).render(response, accepted_media_type,
                                   renderer_context)
+
+
+class CustomAPIView(APIView):
+    renderer_classes = [ResponseRenderer]
